@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ChAD"
         tools:targetApi="31">
         <activity
+            android:name="MainActivity.cont"
+            android:exported="false" />
+        <activity
             android:name="MainActivity.Evening"
             android:exported="false" />
         <activity
