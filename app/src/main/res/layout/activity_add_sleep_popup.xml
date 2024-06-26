@@ -2,174 +2,196 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="#CDCBCB">
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#86ADC1"
+    tools:context="MainActivity.addMain">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="263dp"
-        android:layout_height="260dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <!-- ImageView for Clock Image -->
+        <ImageView
+            android:id="@+id/clockImageView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/sleep" />
 
-
+        <!-- Label for Clock -->
         <TextView
-            android:id="@+id/start"
-            android:layout_width="93dp"
-            android:layout_height="33dp"
-            android:fontFamily="@font/andika"
-            android:text="start :"
-            android:textAlignment="center"
+            android:id="@+id/clockLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clockImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Sleep Time"
             android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.07" />
+            android:textSize="36sp" />
 
-        <TextView
-            android:id="@+id/end"
-            android:layout_width="93dp"
-            android:layout_height="33dp"
-            android:fontFamily="@font/andika"
-            android:text="end :"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.325" />
+        <!-- Hours SeekBar -->
+        <SeekBar
+            android:id="@+id/hoursSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/clockLabel"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="32dp"
+            android:max="24"
+            android:progressBackgroundTint="#CCCCCC"
+            android:progressTint="#000000"
+            android:thumb="@drawable/battery_small"
+            android:thumbTint="#000000" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/enterEndL"
-            android:layout_width="117dp"
-            android:layout_height="43dp"
-            android:background="@drawable/roundstyle"
-            android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.78"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.075">
+        <!-- Hours Labels -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hoursSeekBar"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/enterEnd"
-                android:layout_width="107dp"
-                android:layout_height="43dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:backgroundTint="#000000"
+            <!-- Add labels every 6 hours from 0 to 24 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
                 android:textColor="#000000"
-                android:textColorHint="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/trouble"
-            android:layout_width="115dp"
-            android:layout_height="44dp"
-            android:fontFamily="@font/andika"
-            android:text="troubles?"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.013"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.615" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/enterStartL"
-            android:layout_width="117dp"
-            android:layout_height="43dp"
-            android:background="@drawable/roundstyle"
-            android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.787"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.328">
-
-            <EditText
-                android:id="@+id/enterStart"
-                android:layout_width="108dp"
-                android:layout_height="41dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:backgroundTint="#000000"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="6"
                 android:textColor="#000000"
-                android:textColorHint="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:textSize="18sp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout5"
-            android:layout_width="117dp"
-            android:layout_height="43dp"
-            android:background="@drawable/roundstyle"
-            android:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.787"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.591"
-            tools:ignore="DuplicateIds">
-
-            <Spinner
-                android:id="@+id/spinner_pop1"
-                android:layout_width="101dp"
-                android:layout_height="41dp"
-                android:backgroundTint="#000000"
-                android:entries="@array/yesno"
-                android:foregroundTint="#000000"
-                android:spinnerMode="dropdown"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="12"
                 android:textColor="#000000"
-                android:visibility="visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.842"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                android:textSize="18sp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="18"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="24"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Minutes SeekBar -->
+        <SeekBar
+            android:id="@+id/minutesSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hoursSeekBar"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="32dp"
+            android:max="24"
+            android:progressBackgroundTint="#CCCCCC"
+            android:progressTint="#000000"
+            android:thumb="@drawable/battery_small"
+            android:thumbTint="#000000" />
+
+        <!-- Minutes Labels -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/minutesSeekBar"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <!-- Add labels every 10 minutes from 0 to 59 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="18"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="24"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Confirm Button -->
         <Button
-            android:id="@+id/confirmpop"
-            android:layout_width="91dp"
-            android:layout_height="41dp"
-            android:fontFamily="@font/andika"
-            android:text="confirm"
-            android:textAlignment="center"
-            android:textAllCaps="false"
+            android:id="@+id/confirmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/minutesSeekBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:background="#000000"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="12dp"
+            android:text="Confirm"
             android:textColor="#000000"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.55"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.98" />
+            android:textSize="18sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

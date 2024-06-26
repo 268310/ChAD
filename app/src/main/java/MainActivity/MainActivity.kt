@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var contactsButton: LinearLayout
     private lateinit var medsButton: LinearLayout
     private lateinit var calendarButton: LinearLayout
+    private lateinit var resultsButton: LinearLayout
     private lateinit var addButton: ImageButton
 
     @SuppressLint("MissingInflatedId")
@@ -50,6 +51,12 @@ class MainActivity : AppCompatActivity() {
             opencalendarMain()
         }
 
+        //przycisk results
+        resultsButton = findViewById(R.id.layoutResults)
+        resultsButton.setOnClickListener{
+            openresultsMain()
+        }
+
         //przycisk dodaj
         addButton = findViewById(R.id.plus)
         addButton.setOnClickListener {
@@ -70,6 +77,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun opencalendarMain(){
         val intent = Intent(this, calendarMain::class.java)
+        startActivity(intent)
+    }
+
+    private fun openresultsMain(){
+        val intent = Intent(this, resultsMain::class.java)
         startActivity(intent)
     }
 

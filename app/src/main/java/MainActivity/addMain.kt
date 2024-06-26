@@ -76,7 +76,7 @@ class addMain : AppCompatActivity() {
         dialog.setContentView(R.layout.activity_add_sleep_popup)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        val mySpinner = dialog.findViewById<Spinner>(R.id.spinner_pop1)
+        val mySpinner = dialog.findViewById<Spinner>(R.id.spinner)
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.yesno,
@@ -85,7 +85,7 @@ class addMain : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         mySpinner.adapter = adapter
 
-        val confirm = dialog.findViewById<Button>(R.id.confirmpop)
+        val confirm = dialog.findViewById<Button>(R.id.confirmButton)
         confirm.setOnClickListener {
             dialog.dismiss()
         }
