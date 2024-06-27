@@ -1,4 +1,4 @@
-package MainActivity
+/**package MainActivity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -72,4 +72,4 @@ class resultsMain : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
-}
+}*/

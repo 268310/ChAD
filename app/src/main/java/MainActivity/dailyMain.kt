@@ -1,3 +1,6 @@
+package MainActivity
+
+/**
 package com.example.yourapp
 
 import android.os.Bundle
@@ -57,3 +60,4 @@ open class dailyMain : AppCompatActivity() {
         activityTextView.text = data["activity"] as? String ?: "No Activity"
     }
 }
+*/
