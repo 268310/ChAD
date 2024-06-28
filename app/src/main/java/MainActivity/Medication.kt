@@ -1,8 +1,7 @@
 package MainActivity
 
 data class Medication(
-    val drugName: String,
-    val dosage: Double,
-    val unit: String,
-    val time: String
+    val drugName: String = "",
+    val dosage: Double = 0.0,
+    val unit: String = ""
 )

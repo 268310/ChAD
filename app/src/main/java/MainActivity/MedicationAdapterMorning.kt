@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chad.R
 
-class MedicationAdapter(private val medicationsList: List<Medication>) :
-    RecyclerView.Adapter<MedicationAdapter.ViewHolder>() {
+class MedicationAdapterMorning(private val medicationsList: List<Medication>) :
+    RecyclerView.Adapter<MedicationAdapterMorning.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -29,13 +29,11 @@ class MedicationAdapter(private val medicationsList: List<Medication>) :
         private val drugNameTextView: TextView = itemView.findViewById(R.id.NAME)
         private val dosageTextView: TextView = itemView.findViewById(R.id.dosageint)
         private val unitTextView: TextView = itemView.findViewById(R.id.unitint)
-        private val timeTextView: TextView = itemView.findViewById(R.id.timeint)
 
         fun bind(medication: Medication) {
             drugNameTextView.text = medication.drugName
             dosageTextView.text = "Dosage: ${medication.dosage}"
             unitTextView.text = "Unit: ${medication.unit}"
-            timeTextView.text = "Time: ${medication.time}"
         }
     }
 }

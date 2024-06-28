@@ -1,10 +1,10 @@
 package MainActivity
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chad.R
@@ -12,51 +12,44 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Day : AppCompatActivity() {
+    private lateinit var home: ImageView
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: MedicationAdapter
-    private val medicationsList = mutableListOf<Medication>()
+    private lateinit var adapter: MedicationAdapterDay
+    private lateinit var medicationsList: List<Medication>
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_day)
 
-        recyclerView = findViewById(R.id.recyclerViewD)
+        recyclerView = findViewById(R.id.recyclerViewDAY)
+        home = findViewById(R.id.homeDay)
+
+        medicationsList = loadMedications()
+        adapter = MedicationAdapterDay(medicationsList)
+
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MedicationAdapter(medicationsList)
         recyclerView.adapter = adapter
 
-        loadMedications()
-    }
-
-    private fun loadMedications() {
-        val userEmail = FirebaseAuth.getInstance().currentUser?.email
-
-        if (userEmail == null) {
-            // Handle case where user is not logged in
-            return
+        home.setOnClickListener{
+            homeMain()
         }
-
-        val db = FirebaseFirestore.getInstance()
-        db.collection("users").document(userEmail)
-            .collection("medications")
-            .whereEqualTo("time", "day")
-            .get()
-            .addOnSuccessListener { querySnapshot ->
-                medicationsList.clear()
-                for (document in querySnapshot.documents) {
-                    val drugName = document.getString("name") ?: ""
-                    val dosage = document.getDouble("dosage") ?: 0.0
-                    val unit = document.getString("unit") ?: ""
-                    val time = document.getString("time") ?: ""
-
-                    val medication = Medication(drugName, dosage, unit, time)
-                    medicationsList.add(medication)
-                }
-                // Notify adapter of data change
-                adapter.notifyDataSetChanged()
-            }
-            .addOnFailureListener { e ->
-                // Handle failure to fetch medications
-            }
     }
+
+    private fun loadMedications(): List<Medication> {
+        return listOf(
+            Medication(drugName = "Lisinopril", dosage = 10.0, unit = "mg"),
+            Medication(drugName = "Simvastatin", dosage = 20.0, unit = "mg"),
+            Medication(drugName = "Levothyroxine", dosage = 50.0, unit = "mcg"),
+            Medication(drugName = "Amlodipine", dosage = 5.0, unit = "mg"),
+            Medication(drugName = "Omeprazole", dosage = 40.0, unit = "mg")
+        )
+    }
+
+    private fun homeMain(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+
 }

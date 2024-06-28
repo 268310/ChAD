@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.chad.R
-import com.example.chad.models.Contact
 import com.google.firebase.auth.FirebaseAuth
 
 class add : AppCompatActivity() {

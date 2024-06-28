@@ -1,4 +1,4 @@
-package com.example.chad
+package MainActivity
 
 import MainActivity.MainActivity
 import MainActivity.addMain
@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.chad.R
 
 class add_sleep_popup : AppCompatActivity() {
     private lateinit var confirmButton: LinearLayout
@@ -31,8 +32,8 @@ class add_sleep_popup : AppCompatActivity() {
             insets
         }
 
-        val seekBarStartSleep: SeekBar = findViewById(R.id.seekBar_start_sleep)
-        val seekBarStopSleep: SeekBar = findViewById(R.id.seekBar_stop_sleep)
+        val seekBarStartSleep: SeekBar = findViewById(R.id.seekBarStartSleep)
+        val seekBarStopSleep: SeekBar = findViewById(R.id.seekBarStopSleep)
 
         confirmButton = findViewById(R.id.confirm)
         confirmButton.setOnClickListener {

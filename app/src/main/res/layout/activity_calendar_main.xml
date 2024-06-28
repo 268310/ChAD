@@ -193,4 +193,31 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
 
 
+    <ImageButton
+        android:id="@+id/homeCalendar"
+        android:layout_width="77dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/andika"
+        android:text="@string/homepage"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.898" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

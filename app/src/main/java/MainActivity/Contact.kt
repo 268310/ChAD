@@ -1,4 +1,4 @@
-package com.example.chad.models
+package MainActivity
 
 data class Contact(
     val name: String = "",

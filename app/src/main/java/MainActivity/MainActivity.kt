@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             opencalendarMain()
         }
 
-        //przycisk results
+        // przycisk results
         resultsButton = findViewById(R.id.layoutResults)
         resultsButton.setOnClickListener{
             openresultsMain()

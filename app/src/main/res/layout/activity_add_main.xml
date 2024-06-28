@@ -199,17 +199,45 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.013" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="226dp"
-            android:layout_height="87dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.902"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.517"
-            app:srcCompat="@drawable/bigbattery" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ImageView -->
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="226dp"
+                android:layout_height="87dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/bigbattery" />
+
+            <!-- SeekBar -->
+
+            <Button
+                android:id="@+id/energy_add"
+                android:layout_width="78dp"
+                android:layout_height="48dp"
+                android:backgroundTint="#CDCBCB"
+                android:fontFamily="@font/andika"
+                android:text="add"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                app:cornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.792"
+                tools:ignore="SmallSp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -224,7 +252,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.259">
-
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -336,8 +363,8 @@
 
         <Button
             android:id="@+id/sleep_add"
-            android:layout_width="79dp"
-            android:layout_height="42dp"
+            android:layout_width="78dp"
+            android:layout_height="48dp"
             android:backgroundTint="#CDCBCB"
             android:fontFamily="@font/andika"
             android:text="add"
@@ -429,8 +456,8 @@
 
         <Button
             android:id="@+id/activity_add"
-            android:layout_width="79dp"
-            android:layout_height="42dp"
+            android:layout_width="78dp"
+            android:layout_height="48dp"
             android:backgroundTint="#CDCBCB"
             android:fontFamily="@font/andika"
             android:text="add"
@@ -510,7 +537,7 @@
         android:layout_height="68dp"
         android:background="@drawable/roundstyle"
         android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -519,7 +546,7 @@
         app:srcCompat="@drawable/home" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView3"
         android:layout_width="103dp"
         android:layout_height="34dp"
         android:fontFamily="@font/andika"

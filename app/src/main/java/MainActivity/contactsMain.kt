@@ -1,5 +1,6 @@
 package MainActivity
 
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
@@ -13,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chad.R
-import com.example.chad.models.Contact
+import MainActivity.Contact
 
 class contactsMain : AppCompatActivity() {
     private lateinit var addButton: LinearLayout

@@ -70,6 +70,21 @@
             android:name="MainActivity.MainActivity"
             android:exported="false" />
         <activity
+            android:name="MainActivity.resultsMain"
+            android:exported="false" />
+        <activity
+            android:name="MainActivity.dailyMain"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="MainActivity.weeklyMain"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="MainActivity.monthlyMain"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name="MainActivity.register"
             android:exported="true"
             android:theme="@style/Theme.ChAD"

@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#86ADC1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#86ADC1"
     tools:context="MainActivity.Day">
 
+
     <TextView
-        android:id="@+id/dayy"
+        android:id="@+id/textViewHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="600dp"
         android:fontFamily="@font/andika"
         android:gravity="center"
         android:padding="16dp"
@@ -24,27 +26,57 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="1.0" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="353dp"
-        android:layout_height="499dp"
+    <ImageButton
+        android:id="@+id/homeDay"
+        android:layout_width="77dp"
+        android:layout_height="68dp"
         android:background="@drawable/roundstyle"
         android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698">
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeader"
+        app:layout_constraintVertical_bias="0.934"
+        app:srcCompat="@drawable/home" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:fontFamily="@font/andika"
+        android:text="@string/homepage"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewHeader"
+        app:layout_constraintVertical_bias="0.998" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="333dp"
+        android:layout_height="450dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewHeader"
+        app:layout_constraintVertical_bias="0.437">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewD"
-            android:layout_width="350dp"
-            android:layout_height="428dp"
+            android:id="@+id/recyclerViewDAY"
+            android:layout_width="332dp"
+            android:layout_height="320dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,12 +9,11 @@
     tools:context="MainActivity.addMain">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF">
+        android:layout_height="match_parent">
 
         <!-- ImageView for Clock Image -->
         <ImageView
-            android:id="@+id/clockImageView"
+            android:id="@+id/clockSleep"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_centerHorizontal="true"
@@ -23,10 +22,10 @@
 
         <!-- Label for Clock -->
         <TextView
-            android:id="@+id/clockLabel"
+            android:id="@+id/clocksleepLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/clockImageView"
+            android:layout_below="@id/clockSleep"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:text="Sleep Time"
@@ -35,24 +34,24 @@
 
         <!-- Hours SeekBar -->
         <SeekBar
-            android:id="@+id/hoursSeekBar"
+            android:id="@+id/seekBarStartSleep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/clockLabel"
+            android:layout_below="@id/clocksleepLabel"
             android:layout_marginStart="32dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="32dp"
             android:max="24"
             android:progressBackgroundTint="#CCCCCC"
-            android:progressTint="#000000"
+            android:progressTint="#FFFFFF"
             android:thumb="@drawable/battery_small"
-            android:thumbTint="#000000" />
+            android:thumbTint="#FFFFFF" />
 
         <!-- Hours Labels -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/hoursSeekBar"
+            android:layout_below="@id/seekBarStartSleep"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
@@ -106,24 +105,24 @@
 
         <!-- Minutes SeekBar -->
         <SeekBar
-            android:id="@+id/minutesSeekBar"
+            android:id="@+id/seekBarStopSleep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/hoursSeekBar"
+            android:layout_below="@id/seekBarStartSleep"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="70dp"
             android:layout_marginEnd="32dp"
             android:max="24"
             android:progressBackgroundTint="#CCCCCC"
-            android:progressTint="#000000"
+            android:progressTint="#FFFFFF"
             android:thumb="@drawable/battery_small"
-            android:thumbTint="#000000" />
+            android:thumbTint="#FFFFFF" />
 
         <!-- Minutes Labels -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/minutesSeekBar"
+            android:layout_below="@id/seekBarStopSleep"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
@@ -177,16 +176,16 @@
 
         <!-- Confirm Button -->
         <Button
-            android:id="@+id/confirmButton"
+            android:id="@+id/confirmButtonSleep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/minutesSeekBar"
+            android:layout_below="@id/seekBarStopSleep"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="70dp"
             android:background="#000000"
             android:gravity="center"
             android:paddingStart="24dp"
-            android:paddingTop="24dp"
+            android:paddingTop="12dp"
             android:paddingEnd="24dp"
             android:paddingBottom="12dp"
             android:text="Confirm"

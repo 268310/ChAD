@@ -1,6 +1,5 @@
 package MainActivity
 
-import com.example.chad.models.Contact
 import com.google.firebase.firestore.FirebaseFirestore
 
 interface FirestoreInterface {
